@@ -7,13 +7,13 @@ TAPP Code Challenge for Software Engineer Candidates
 - [Requirements](#requirements)
 - [What We Are Looking For](#what-we-are-looking-for)
 
-## Candidate Information (Fill out with your info)
+## Candidate Information
 
-Name: \<your name>
+Name: Abdul Alradadi
 
-Email: \<your email>
+Email: hrfssa@gmail.com
 
-Resume: \<link to your resume>
+Resume: https://radadi.me/resume.pdf
 
 ## Intro
 
