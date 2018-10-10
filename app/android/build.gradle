@@ -3,12 +3,14 @@
 buildscript {
     ext {
         buildToolsVersion = "27.0.3"
-        minSdkVersion = 16
+        minSdkVersion = 21
         compileSdkVersion = 27
         targetSdkVersion = 26
-        supportLibVersion = "27.1.1"
+        supportLibVersion = "27.0.2"
     }
     repositories {
+        maven { url "https://jitpack.io" }
+        mavenCentral()
         jcenter()
         google()
     }
@@ -20,15 +22,28 @@ buildscript {
     }
 }
 
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex') ) {
+                details.useVersion rootProject.ext.supportLibVersion
+            }
+        }
+    }
+}
+
+
 allprojects {
     repositories {
         mavenLocal()
         jcenter()
+        maven { url "https://jitpack.io" }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
-        google()
+        google() // Google's Maven repository
     }
 }
 

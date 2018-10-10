@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "react": "16.5.0",
-    "react-native": "0.57.2"
+    "react-native": "0.57.2",
+    "react-native-navigation": "https://github.com/abdullah-sr/react-native-navigation#build",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

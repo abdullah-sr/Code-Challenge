@@ -1,3 +1,5 @@
 rootProject.name = 'app'
-
 include ':app'
+
+include ':react-native-navigation'
+project(':react-native-navigation').projectDir = new File('../node_modules/react-native-navigation/lib/android/app/')
