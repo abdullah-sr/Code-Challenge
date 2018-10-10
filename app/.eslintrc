@@ -1,0 +1,37 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended"
+    ],
+    "plugins": [
+        "flowtype"
+    ],
+    "env": {
+        "node": true,
+        "jest": true
+    },
+    "globals": {
+        "__DEV__": false
+    },
+    "rules": {
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "linebreak-style": ["off"],
+        "no-console": ["off"],
+        "comma-dangle": ["off"],
+        "radix": ["off"],
+        "max-len": ["error", { "code": 120}],
+        "no-new": ["off"],
+        "react/prop-types": ["off"],
+        "react/sort-comp": ["off"],
+        "react/destructuring-assignment": ["off"],
+        "react/jsx-filename-extension": ["off"],
+        "react/jsx-indent": ["off"],
+        "react/jsx-indent-props": ["off"],
+        "react/jsx-tag-spacing": ["off"],
+        "react/jsx-one-expression-per-line": ["off"],
+        "class-methods-use-this": ["off"],
+        "flowtype/define-flow-type": 1,
+        "flowtype/use-flow-type": 1
+    }
+}
