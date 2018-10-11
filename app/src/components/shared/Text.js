@@ -62,7 +62,7 @@ CustomText.defaultProps = {
     mr: 0,
     mb: 0,
     ml: 0,
-    color: '#000',
+    color: '#030303',
     size: 12,
     fontWeight: 'normal',
 };

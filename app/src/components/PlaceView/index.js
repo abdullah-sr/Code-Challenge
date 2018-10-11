@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     bookmarkButton: {
-        width: '60%',
+        width: '70%',
     }
 });
 
@@ -42,7 +42,7 @@ const PlaceView = (props: Props) => (
             <Text mb={30}>736 E Market St.Louisville, KY 40202</Text>
             <Button
                 containerStyle={styles.bookmarkButton}
-                title="Bookmark"
+                title="Bookmark" // todo: make dynamic
             />
         </View>
     </SafeAreaView>
