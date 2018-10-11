@@ -1,9 +1,11 @@
 // @flow
 import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux';
 import BookmarkView from './components/BookmarkView';
+import store from './store';
 
 function startApp() {
-    Navigation.registerComponent('BookmarkView', () => BookmarkView);
+    Navigation.registerComponentWithRedux('BookmarkView', () => BookmarkView, Provider, store);
     Navigation.events()
         .registerAppLaunchedListener(() => {
             Navigation.setRoot({
