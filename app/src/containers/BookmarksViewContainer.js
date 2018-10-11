@@ -19,17 +19,11 @@ type Props = {
 class BookmarksViewContainer extends React.Component<Props> {
     static get options() {
         return {
-            layout: {
-                orientation: ['portrait'], // An array of supported orientations
-                backgroundColor: '#fff'
-            },
             topBar: {
-                elevation: 0,
                 title: {
                     text: 'Bookmarks',
-                    color: '#030303',
-                    alignment: 'center',
                 },
+                elevation: 0,
             }
         };
     }

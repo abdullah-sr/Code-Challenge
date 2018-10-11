@@ -11,29 +11,26 @@ const SCREENS = {
     [PlaceDetails]: PlaceViewContainer,
 };
 
-// BUGGY https://github.com/wix/react-native-navigation/issues/4080
-//function setNavigationDefaults() {
-// Navigation.setDefaultOptions({
-//     layout: {
-//         orientation: ['portrait'], // An array of supported orientations
-//         backgroundColor: '#fff'
-//     },
-// topBar: {
-//     elevation: 0,
-//     drawBehind: true,
-//     visible: false,
-//     title: {
-//         transparent: true,
-//         color: '#030303',
-//         alignment: 'center',
-//     },
-//     background: {
-//         transparent: true,
-//         color: 'transparent',
-//     },
-// }
-//});
-//}
+function setNavigationDefaults() {
+    Navigation.setDefaultOptions({
+        layout: {
+            orientation: ['portrait'], // An array of supported orientations
+            backgroundColor: '#fff'
+        },
+        topBar: {
+            title: {
+                color: '#030303',
+                alignment: 'center',
+            },
+            background: {
+                transparent: true,
+                color: 'transparent',
+            },
+            elevation: 0,
+            drawBehind: false,
+        }
+    });
+}
 
 function setNavigationRoot() {
     // create a stack based navigation
@@ -57,7 +54,7 @@ function startApp() {
         // register screens with the navigation library
         Navigation.registerComponentWithRedux(screenName, () => SCREENS[screenName], Provider, store);
     }
-
+    setNavigationDefaults();
     Navigation.events().registerAppLaunchedListener(setNavigationRoot);
 }
 
