@@ -43,7 +43,6 @@ const BookmarkItem = (props: Props) => {
         state = '',
         zip = '',
     } = parser.parseLocation(props.item.address);
-    console.log(parser.parseLocation(props.item.address));
     return (
         <TouchableOpacity
             style={styles.rootContainer}

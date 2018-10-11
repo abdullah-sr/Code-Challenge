@@ -7,6 +7,7 @@ import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
+import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,11 +29,12 @@ public class MainApplication extends NavigationApplication {
         return BuildConfig.DEBUG;
     }
 
-    @Nullable
+    @Nullableconsole
     @Override
     public List<ReactPackage> createAdditionalReactPackages() {
         return Arrays.asList(
-                new RNGooglePlacesPackage()
+                new RNGooglePlacesPackage(),
+                new ReactNativeConfigPackage()
         );
     }
 
