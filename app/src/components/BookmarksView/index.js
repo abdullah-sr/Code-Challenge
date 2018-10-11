@@ -2,7 +2,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import BookmarksList from './BookmarksList';
-import AddNewPlaceButton from './AddNewPlaceButton';
+import Button from '../shared/Button';
 import type { Place } from '../../types';
 
 type Props = {
@@ -27,7 +27,7 @@ const BookmarksView = (props: Props) => (
     <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.rootContainer}>
             <BookmarksList bookmarks={props.bookmarks}/>
-            <AddNewPlaceButton
+            <Button
                 containerStyle={styles.addNewPlaceButton}
                 onPress={props.onPressAddNewPlace}
             />
