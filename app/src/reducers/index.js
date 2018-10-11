@@ -1,9 +1,10 @@
 // @flow
 import { combineReducers, type CombinedReducer } from 'redux';
+import type { Place } from '../types';
 
 // todo: define types
 
-const bookmarks = (state: Array<Object> = [], action): Array<Object> => {
+const bookmarks = (state: Array<Place> = [], action): Array<Place> => {
     switch (action.type) {
         default:
             return state;

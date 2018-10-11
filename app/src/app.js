@@ -1,7 +1,7 @@
 // @flow
 import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
-import BookmarkView from './components/BookmarkView';
+import BookmarkView from './containers/BookmarkViewContainer';
 import store from './store';
 
 function startApp() {
