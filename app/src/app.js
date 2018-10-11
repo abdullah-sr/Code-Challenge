@@ -11,6 +11,7 @@ const SCREENS = {
     [PlaceDetails]: PlaceViewContainer,
 };
 
+// BUGGY https://github.com/wix/react-native-navigation/issues/4080
 function setNavigationDefaults() {
     Navigation.setDefaultOptions({
         layout: {
