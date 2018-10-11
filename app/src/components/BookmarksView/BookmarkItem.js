@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
 
 type Props = {
     item: Place,
+    onPress: (Place) => mixed,
 };
 
 const BookmarkItem = (props: Props) => {
@@ -41,7 +42,10 @@ const BookmarkItem = (props: Props) => {
     } = parser.parseLocation(props.item.address);
     console.log(parser.parseLocation(props.item.address));
     return (
-        <TouchableOpacity style={styles.rootContainer}>
+        <TouchableOpacity
+            style={styles.rootContainer}
+            onPress={() => props.onPress(props.item)}
+        >
             <Avatar
                 containerStyle={styles.avatarContainer}
                 avatarStyle={styles.avatar}

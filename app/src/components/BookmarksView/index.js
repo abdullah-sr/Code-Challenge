@@ -8,6 +8,7 @@ import type { Place } from '../../types';
 type Props = {
     bookmarks: Array<Place>,
     onPressAddNewPlace: () => mixed,
+    onPressBookmark: () => mixed,
 };
 
 const styles = StyleSheet.create({
@@ -27,7 +28,10 @@ const styles = StyleSheet.create({
 const BookmarksView = (props: Props) => (
     <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.rootContainer}>
-            <BookmarksList bookmarks={props.bookmarks}/>
+            <BookmarksList
+                bookmarks={props.bookmarks}
+                onPress={props.onPressBookmark}
+            />
             <Button
                 title="Add New Place"
                 containerStyle={styles.addNewPlaceButton}

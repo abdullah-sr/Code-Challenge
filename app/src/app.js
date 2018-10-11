@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import BookmarksViewContainer from './containers/BookmarksViewContainer';
 import PlaceViewContainer from './containers/PlaceViewContainer';
 import store from './store';
+import { Bookmarks, PlaceDetails } from './constants/screenNames';
 
 const SCREENS = {
-    Bookmarks: BookmarksViewContainer,
-    PlaceDetails: PlaceViewContainer,
+    [Bookmarks]: BookmarksViewContainer,
+    [PlaceDetails]: PlaceViewContainer,
 };
 
 
@@ -24,7 +25,7 @@ function startApp() {
                     children: [
                         {
                             component: {
-                                name: 'Bookmarks'
+                                name: Bookmarks
                             }
                         }
                     ],

@@ -7,6 +7,7 @@ export type Place = {
     address: string,
     latitude: number,
     longitude: number,
+    bookmarked: boolean,
 };
 
 export type AddPlaceAction = {
