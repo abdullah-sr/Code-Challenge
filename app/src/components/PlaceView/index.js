@@ -8,10 +8,11 @@ import {
 } from 'react-native';
 import Text from '../shared/Text';
 import Button from '../shared/Button';
-import type { Place } from '../../types';
+import type { BookmarksState, Place } from '../../types';
 
 type Props = {
     place: Place,
+    onPressBookmark: (string) => BookmarksState
 };
 
 const styles = StyleSheet.create({
@@ -52,6 +53,7 @@ const PlaceView = (props: Props) => (
                 success={props.place.bookmarked}
                 fontSize={11}
                 height={45}
+                onPress={() => props.onPressBookmark(props.place.placeID)}
             />
         </View>
     </SafeAreaView>

@@ -14,7 +14,8 @@ const initialState = {
             name: 'Facebook HQ',
             types: ['street_address', 'geocode'],
             latitude: 37.4843428,
-            longitude: -122.14839939999999
+            longitude: -122.14839939999999,
+            bookmarked: true,
         }
     }
 };

@@ -45,7 +45,7 @@ class BookmarksViewContainer extends React.Component<Props> {
             component: {
                 name: PlaceDetails,
                 passProps: {
-                    place
+                    placeID: place.placeID
                 }
             }
         });

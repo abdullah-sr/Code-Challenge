@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { Avatar, Icon } from 'react-native-elements';
 import parser from 'parse-address';
 import Text from '../shared/Text';
 import type { Place } from '../../types';
@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
     avatar: {
         height: '100%',
         width: '100%',
+    },
+    favoriteIconContainer: {
+        marginLeft: 'auto',
     },
 });
 
@@ -56,6 +59,14 @@ const BookmarkItem = (props: Props) => {
                 <Text>{`${number} ${prefix} ${street} ${type}`.trim()}</Text>
                 <Text>{`${city}, ${state} ${zip}`.trim()}</Text>
             </View>
+            {
+                props.item.bookmarked &&
+                <Icon
+                    containerStyle={styles.favoriteIconContainer}
+                    name="favorite"
+                    color="#29BF12"
+                />
+            }
         </TouchableOpacity>
     );
 };
