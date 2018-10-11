@@ -42,7 +42,7 @@ const PlaceView = (props: Props) => (
     <SafeAreaView style={styles.safeAreaView}>
         <Image
             style={styles.image}
-            source={{ uri: '' }}
+            source={{ uri: props.place.image }}
         />
         <View style={styles.detailsPanel}>
             <Text size={18} mb={8} fontWeight="400">{props.place.name}</Text>

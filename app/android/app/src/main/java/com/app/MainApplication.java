@@ -29,7 +29,7 @@ public class MainApplication extends NavigationApplication {
         return BuildConfig.DEBUG;
     }
 
-    @Nullableconsole
+    @Nullable
     @Override
     public List<ReactPackage> createAdditionalReactPackages() {
         return Arrays.asList(
@@ -37,11 +37,5 @@ public class MainApplication extends NavigationApplication {
                 new ReactNativeConfigPackage()
         );
     }
-
-//    @Override
-//    protected void attachBaseContext (Context base) {
-//        super.attachBaseContext(base);
-//        MultiDex.install(this);
-//    }
 
 }

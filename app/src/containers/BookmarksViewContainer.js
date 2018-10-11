@@ -23,6 +23,7 @@ class BookmarksViewContainer extends React.Component<Props> {
                 title: {
                     text: 'Bookmarks',
                 },
+                elevation: 0,
             }
         };
     }

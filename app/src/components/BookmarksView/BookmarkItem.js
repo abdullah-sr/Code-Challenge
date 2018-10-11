@@ -51,7 +51,7 @@ const BookmarkItem = (props: Props) => {
             <Avatar
                 containerStyle={styles.avatarContainer}
                 avatarStyle={styles.avatar}
-                source={{ uri: '' }}
+                source={{ uri: props.item.image }}
             />
             <View>
                 <Text size={14} fontWeight="400" mb={5}>{props.item.name}</Text>

@@ -16,6 +16,7 @@ const initialState = {
             latitude: 37.4843428,
             longitude: -122.14839939999999,
             bookmarked: true,
+            image: '',
         }
     }
 };

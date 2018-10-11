@@ -1,2 +1,3 @@
 export const ADD_PLACE = 'ADD_PLACE';
 export const TOGGLE_BOOKMARK = 'TOGGLE_BOOKMARK';
+export const FETCH_PLACE_IMAGE = 'FETCH_PLACE_IMAGE';

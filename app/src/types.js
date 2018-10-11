@@ -1,5 +1,5 @@
 // @flow
-import { ADD_PLACE, TOGGLE_BOOKMARK } from './constants/actionTypes';
+import { ADD_PLACE, FETCH_PLACE_IMAGE, TOGGLE_BOOKMARK } from './constants/actionTypes';
 
 export type Place = {
     placeID: string,
@@ -8,6 +8,7 @@ export type Place = {
     latitude: number,
     longitude: number,
     bookmarked: boolean,
+    image: string,
 };
 
 export type AddPlaceAction = {
@@ -22,6 +23,13 @@ export type ToggleBookmarkAction = {
     payload: string |
 }
 
+export type FetchPlaceImageAction = {
+    |type: FETCH_PLACE_IMAGE,
+    payload: {
+        placeID: string,
+        image: string,
+    } |
+};
 
 // an object of places where every key is the place id
 export type BookmarksState = {
@@ -34,4 +42,6 @@ export type GlobalState = {
 }
 
 // the types of actions redux reducers accept
-export type Action = AddPlaceAction | ToggleBookmarkAction;
+export type Action = AddPlaceAction | ToggleBookmarkAction | FetchPlaceImageAction;
+
+export type Dispatch = (Action) => mixed;

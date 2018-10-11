@@ -1,5 +1,5 @@
 // @flow
-import { ADD_PLACE, TOGGLE_BOOKMARK } from '../constants/actionTypes';
+import { ADD_PLACE, FETCH_PLACE_IMAGE, TOGGLE_BOOKMARK } from '../constants/actionTypes';
 import type { BookmarksState, Action, Place } from '../types';
 
 export default (state: BookmarksState = {}, action: Action): BookmarksState => {
@@ -10,6 +10,12 @@ export default (state: BookmarksState = {}, action: Action): BookmarksState => {
             const placeID = action.payload;
             const place = { ...state[placeID] };
             place.bookmarked = !place.bookmarked;
+            return { ...state, ...{ [placeID]: place } };
+        }
+        case FETCH_PLACE_IMAGE: {
+            const { placeID } = action.payload;
+            const place = { ...state[placeID] };
+            place.image = action.payload.image;
             return { ...state, ...{ [placeID]: place } };
         }
         default:

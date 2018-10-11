@@ -11,7 +11,6 @@ const SCREENS = {
     [PlaceDetails]: PlaceViewContainer,
 };
 
-
 function setNavigationDefaults() {
     Navigation.setDefaultOptions({
         layout: {
@@ -28,6 +27,7 @@ function setNavigationDefaults() {
                 color: 'transparent',
             },
             elevation: 0,
+            drawBehind: false,
         }
     });
 }

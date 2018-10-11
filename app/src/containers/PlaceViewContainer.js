@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PlaceView from '../components/PlaceView';
 import type { BookmarksState, Place } from '../types';
 import { toggleBookmark } from '../actions';
-import { getBookmarksAsList } from '../reducers/bookmarks';
 
 type Props = {
     placeID: string,
