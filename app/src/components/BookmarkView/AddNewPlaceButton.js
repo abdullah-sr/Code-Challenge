@@ -6,7 +6,8 @@ import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet
 
 
 type Props = {
-    containerStyle?: ViewStyleProp
+    containerStyle?: ViewStyleProp,
+    onPress: () => mixed,
 };
 
 const styles = StyleSheet.create({
@@ -33,6 +34,7 @@ const AddNewPlaceButton = (props: Props) => (
         buttonStyle={styles.addNewPlaceBtn}
         titleStyle={styles.addNewPlaceTitle}
         title="Add New Place"
+        onPress={props.onPress}
     />
 );
 

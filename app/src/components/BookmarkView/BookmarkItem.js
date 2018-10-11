@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Text, normalize } from 'react-native-elements';
+import type { Place } from '../../types';
 
 const styles = StyleSheet.create({
     rootContainer: {
@@ -27,7 +28,9 @@ const styles = StyleSheet.create({
     }
 });
 
-type Props = {};
+type Props = {
+    item: Place,
+};
 
 const BookmarkItem = (props: Props) => (
     <View style={styles.rootContainer}>

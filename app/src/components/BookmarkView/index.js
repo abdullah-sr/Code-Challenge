@@ -3,9 +3,11 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import BookmarksList from './BookmarksList';
 import AddNewPlaceButton from './AddNewPlaceButton';
+import type { Place } from '../../types';
 
 type Props = {
-    bookmarks: Array<Object>
+    bookmarks: Array<Place>,
+    onPressAddNewPlace: () => mixed,
 };
 
 const styles = StyleSheet.create({
@@ -24,8 +26,11 @@ const styles = StyleSheet.create({
 const BookmarkView = (props: Props) => (
     <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.rootContainer}>
-            <BookmarksList/>
-            <AddNewPlaceButton containerStyle={styles.addNewPlaceButton}/>
+            <BookmarksList bookmarks={props.bookmarks}/>
+            <AddNewPlaceButton
+                containerStyle={styles.addNewPlaceButton}
+                onPress={props.onPressAddNewPlace}
+            />
         </View>
     </SafeAreaView>
 );
