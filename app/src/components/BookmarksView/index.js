@@ -28,6 +28,7 @@ const BookmarksView = (props: Props) => (
         <View style={styles.rootContainer}>
             <BookmarksList bookmarks={props.bookmarks}/>
             <Button
+                title="Add New Place"
                 containerStyle={styles.addNewPlaceButton}
                 onPress={props.onPressAddNewPlace}
             />

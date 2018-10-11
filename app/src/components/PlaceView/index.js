@@ -1,13 +1,17 @@
 // @flow
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Image } from 'react-native';
+import {
+    SafeAreaView,
+    StyleSheet,
+    View,
+    Image,
+} from 'react-native';
 import Text from '../shared/Text';
 import Button from '../shared/Button';
 import type { Place } from '../../types';
 
 type Props = {
-    bookmarks: Array<Place>,
-    onPressAddNewPlace: () => mixed,
+    place: Place,
 };
 
 const styles = StyleSheet.create({
