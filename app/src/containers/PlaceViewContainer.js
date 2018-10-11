@@ -16,8 +16,12 @@ class PlaceViewContainer extends React.Component<Props> {
         return {
             topBar: {
                 drawBehind: true,
-                elevaion: 0,
-            }
+                elevation: 0,
+                background: {
+                    transparent: true,
+                    color: 'transparent',
+                },
+            },
         };
     }
 
