@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RNGooglePlaces from 'react-native-google-places';
-import BookmarkView from '../components/BookmarkView';
+import BookmarksView from '../components/BookmarksView';
 import type { Place } from '../types';
 
 type Props = {
@@ -23,7 +23,7 @@ class RegisterViewContainer extends React.Component<Props> {
 
     render() {
         return (
-            <BookmarkView
+            <BookmarksView
                 bookmarks={this.props.bookmarks}
                 onPressAddNewPlace={this.pushSearchPlaceModal}
             />

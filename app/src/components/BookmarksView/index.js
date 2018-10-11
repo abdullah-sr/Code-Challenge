@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const BookmarkView = (props: Props) => (
+const BookmarksView = (props: Props) => (
     <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.rootContainer}>
             <BookmarksList bookmarks={props.bookmarks}/>
@@ -35,4 +35,4 @@ const BookmarkView = (props: Props) => (
     </SafeAreaView>
 );
 
-export default BookmarkView;
+export default BookmarksView;
