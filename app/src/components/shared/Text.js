@@ -6,7 +6,7 @@ import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet
 
 const styles = StyleSheet.create({
     text: {
-        fontFamily: 'System',
+        fontFamily: 'System', // San Francisco on iOS and Roboto on Android
     },
 });
 

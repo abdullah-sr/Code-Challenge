@@ -4,10 +4,13 @@ import { connect } from 'react-redux';
 import RNGooglePlaces from 'react-native-google-places';
 import debounce from 'lodash.debounce';
 import BookmarksView from '../components/BookmarksView';
-import type { Place } from '../types';
+import type { AddPlaceAction, Place } from '../types';
+import { addPlace } from '../actions';
+import { getBookmarksAsList } from '../reducers/bookmarks';
 
 type Props = {
     bookmarks: Array<Place>,
+    addPlace: (Place) => AddPlaceAction
 };
 
 class BookmarksViewContainer extends React.Component<Props> {
@@ -16,7 +19,7 @@ class BookmarksViewContainer extends React.Component<Props> {
         try {
             // restrict search to US only
             const place = await RNGooglePlaces.openAutocompleteModal({ country: 'US' });
-            console.log(place);
+            this.props.addPlace(place);
         } catch (error) {
             // this block executes when user backs out without selecting a place
             console.log(error);
@@ -37,6 +40,6 @@ class BookmarksViewContainer extends React.Component<Props> {
 }
 
 
-const mapStateToProps = ({ bookmarks }) => ({ bookmarks });
+const mapStateToProps = ({ bookmarks }) => ({ bookmarks: getBookmarksAsList(bookmarks) });
 
-export default connect(mapStateToProps)(BookmarksViewContainer);
+export default connect(mapStateToProps, { addPlace })(BookmarksViewContainer);

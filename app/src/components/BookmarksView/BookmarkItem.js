@@ -1,7 +1,9 @@
 // @flow
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Avatar, Text, normalize } from 'react-native-elements';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { Avatar } from 'react-native-elements';
+import parser from 'parse-address';
+import Text from '../shared/Text';
 import type { Place } from '../../types';
 
 const styles = StyleSheet.create({
@@ -21,36 +23,37 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
     },
-    locationName: {
-        fontSize: normalize(14),
-        fontWeight: '400',
-        marginBottom: 5,
-    }
 });
 
 type Props = {
     item: Place,
 };
 
-const BookmarkItem = (props: Props) => (
-    <View style={styles.rootContainer}>
-        <Avatar
-            containerStyle={styles.avatarContainer}
-            avatarStyle={styles.avatar}
-            source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' }}
-            onPress={() => console.log('Works!')}
-            activeOpacity={0.7}
-        />
-        <View>
-            <Text style={styles.locationName}>Royals Hot Chicken</Text>
-            <Text>
-                736 E Market St.
-            </Text>
-            <Text>
-                Louisville, KY 40202
-            </Text>
-        </View>
-    </View>
-);
+const BookmarkItem = (props: Props) => {
+    const {
+        number = '',
+        prefix = '',
+        street = '',
+        type = '',
+        city = '',
+        state = '',
+        zip = '',
+    } = parser.parseLocation(props.item.address);
+    console.log(parser.parseLocation(props.item.address));
+    return (
+        <TouchableOpacity style={styles.rootContainer}>
+            <Avatar
+                containerStyle={styles.avatarContainer}
+                avatarStyle={styles.avatar}
+                source={{ uri: '' }}
+            />
+            <View>
+                <Text size={14} fontWeight="400" mb={5}>{props.item.name}</Text>
+                <Text>{`${number} ${prefix} ${street} ${type}`.trim()}</Text>
+                <Text>{`${city}, ${state} ${zip}`.trim()}</Text>
+            </View>
+        </TouchableOpacity>
+    );
+};
 
 export default BookmarkItem;

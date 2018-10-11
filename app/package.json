@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
+    "parse-address": "^1.1.0",
     "react": "16.5.0",
     "react-native": "0.57.2",
     "react-native-elements": "^1.0.0-beta5",

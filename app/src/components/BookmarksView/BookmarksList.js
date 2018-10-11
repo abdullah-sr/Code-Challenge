@@ -17,7 +17,7 @@ type Props = {
     bookmarks: Array<Place>
 };
 
-const renderBookmarkItem = ({ item }: { item: Place }) => <BookmarkItem item={item}/>;
+const renderBookmarkItem = ({ item }: { item: Place }) => <BookmarkItem key={item.placeID} item={item}/>;
 
 const keyExctractor = (item: Place) => item.placeID;
 

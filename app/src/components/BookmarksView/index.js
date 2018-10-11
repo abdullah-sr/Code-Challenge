@@ -13,6 +13,7 @@ type Props = {
 const styles = StyleSheet.create({
     safeAreaView: {
         flex: 1,
+        backgroundColor: '#fff',
     },
     rootContainer: {
         flex: 1,
