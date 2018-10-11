@@ -9,6 +9,14 @@ type Props = {
 };
 
 class PlaceViewContainer extends React.Component<Props> {
+    static get options() {
+        return {
+            topBar: {
+                drawBehind: true,
+            }
+        };
+    }
+
     render() {
         return (
             <PlaceView place={this.props.place}/>

@@ -17,6 +17,16 @@ type Props = {
 };
 
 class BookmarksViewContainer extends React.Component<Props> {
+    static get options() {
+        return {
+            topBar: {
+                title: {
+                    text: 'Bookmarks',
+                },
+            }
+        };
+    }
+
     // opens up the search modal
     // debounce the event to prevent the modal from appearing multiple times in case of fast clicks
     pushSearchPlaceModal = debounce(async () => {

@@ -50,6 +50,8 @@ const PlaceView = (props: Props) => (
                 containerStyle={styles.bookmarkButton}
                 title={props.place.bookmarked ? 'Bookmarked' : 'Bookmark'}
                 success={props.place.bookmarked}
+                fontSize={11}
+                height={45}
             />
         </View>
     </SafeAreaView>

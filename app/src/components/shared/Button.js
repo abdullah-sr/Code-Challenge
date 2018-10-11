@@ -11,19 +11,19 @@ type Props = {
     titleStyle?: ViewStyleProp,
     success?: boolean,
     loading?: boolean,
+    height?: number,
+    fontSize?: number,
 };
 
 const styles = StyleSheet.create({
     container: {},
     button: {
-        height: 40,
         borderRadius: 8,
         backgroundColor: 'rgba(4,4,206,1)',
     },
     title: {
         fontFamily: 'System',
         fontWeight: 'normal',
-        fontSize: normalize(11),
     },
     buttonSuccess: {
         backgroundColor: '#29BF12',
@@ -44,14 +44,22 @@ const CustomButton = (props: Props) => {
         titleStyle,
         success,
         loading,
+        height,
+        fontSize,
         ...rest
     } = props;
     const containerStyles = [styles.container, containerStyle];
-    const titleStyles = [styles.title, titleStyle];
     const buttonStyles = [
         styles.button,
         buttonStyle,
-        success ? styles.buttonSuccess : null
+        success ? styles.buttonSuccess : null,
+        { height }
+    ];
+    const titleStyles = [
+        styles.title,
+        titleStyle,
+        fontSize,
+        { fontSize: normalize(fontSize) },
     ];
     const successIcon = {
         name: 'check',
@@ -77,6 +85,8 @@ CustomButton.defaultProps = {
     titleStyle: null,
     success: false,
     loading: false,
+    height: 50,
+    fontSize: 12,
 };
 
 export default CustomButton;
